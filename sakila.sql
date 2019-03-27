@@ -1,3 +1,5 @@
+use sakila;
+
 -- 1
 SELECT customer.first_name, customer.last_name, customer.email, address.address
 FROM customer
@@ -15,3 +17,8 @@ FROM film
 inner join film_actor on film.film_id = film_actor.film_id
 inner join actor on film_actor.actor_id = actor.actor_id and actor.actor_id = 5;
 
+-- 4
+select customer.first_name, customer.last_name, customer.email, address.address
+FROM customer
+inner join address on customer.address_id = address.address_id and (address.city_id = 1 OR address.city_id = 42 OR address.city_id = 312 OR address.city_id = 459)
+inner join store on customer.store_id = store.store_id and store.store_id = 1;
