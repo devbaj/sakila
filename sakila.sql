@@ -40,4 +40,10 @@ from film
 inner join film_category on film.film_id =  film_category.film_id and film.rental_rate = 2.99
 inner join category on film_category.category_id = category.category_id and category.name = "Drama";
 
-
+-- 8
+select film.title, film.description, film.release_year, film.rating, film.special_features, category.name as genre, actor.first_name, actor.last_name
+from film
+inner join film_category on film.film_id = film_category.film_id
+inner join category on film_category.category_id = category.category_id and category.name = "Action"
+inner join film_actor on film.film_id = film_actor.film_id
+inner join actor on film_actor.actor_id = actor.actor_id and actor.first_name = "SANDRA" and actor.last_name = "KILMER";
