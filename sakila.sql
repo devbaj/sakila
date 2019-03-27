@@ -26,5 +26,10 @@ inner join store on customer.store_id = store.store_id and store.store_id = 1;
 -- 5
 select film.title, film.description, film.release_year, film.rating, film.special_features
 FROM film
-join film_actor on film.film_id = film_actor.film_id and film_actor.actor_id = 15 and film.special_features like "%behind the scenes%";
+join film_actor on film.film_id = film_actor.film_id and film_actor.actor_id = 15 and film.special_features like "%behind the scenes%" and film.rating = "G";
 
+-- 6
+select film.film_id, film.title, film_actor.actor_id, concat(actor.first_name, ' ', actor.last_name) as actor_name
+from film
+inner join film_actor on film.film_id = film_actor.film_id and film.film_id = 369
+inner join actor on film_actor.actor_id = actor.actor_id;
