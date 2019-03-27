@@ -33,3 +33,11 @@ select film.film_id, film.title, film_actor.actor_id, concat(actor.first_name, '
 from film
 inner join film_actor on film.film_id = film_actor.film_id and film.film_id = 369
 inner join actor on film_actor.actor_id = actor.actor_id;
+
+-- 7
+select film.title, film.description, film.release_year, film.rating, film.special_features, category.name
+from film
+inner join film_category on film.film_id =  film_category.film_id and film.rental_rate = 2.99
+inner join category on film_category.category_id = category.category_id and category.name = "Drama";
+
+
